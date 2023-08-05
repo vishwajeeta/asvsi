@@ -1,0 +1,7 @@
+#install python
+
+#install django
+cmd>pip install django
+
+#install pillow to add image in server
+cmd>pip install pillow
