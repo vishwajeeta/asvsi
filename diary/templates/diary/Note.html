@@ -1,0 +1,61 @@
+  {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/diary.css' %}">
+<style>
+  a{
+    text-decoration: none;
+    color:orangered;
+    
+  }
+  
+  #add{
+        cursor: pointer;
+        color: black;
+        border: orange solid;
+        background-color: yellow;
+        font-size: 28px;
+        position: fixed;
+        margin-top: 10px;
+        margin-left: 90%;
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        transition: transform .3s ease;
+      }
+      #add:hover{
+        background-color: greenyellow;
+        border: solid gray;
+        transform: scale(1.1);
+      }
+  a:hover{
+    color: orange;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(227, 211, 211);
+  }
+  
+</style>
+</head>
+<body>
+  <a href="{% url 'create_Note'%}" id="add"> CREATE </a><br>
+  <a href="/">❮- BACK</a>
+<div class="row">
+  {% for data in data %}
+    <div class="column">
+      <div class="card">
+        <div class="container">
+          <h2>[ {{data.dates}} ]
+             <a href="{% url 'delete_Note' data.id %}">delete</a> <a href="{% url 'update_Note' data.id %}">update</a></h2>
+          <p>{{data.content}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      div {
+        display: grid;
+        grid-gap: 5px;
+        
+
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+      }
+      @media screen and (max-width: 650px) {
+        div {
+          grid-template-columns: auto;
+          width: 100%;
+          grid-gap: 5px;
+        }
+      }
+      img{
+        padding: 5px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <dody>
+    <div>
+      <img
+        src="{% static 'images/hacking.jfif' %}"
+        alt="Jane"
+        style="width: 100%"
+      />
+
+      <img
+        src="{% static 'images/hacking.jfif' %}"
+        alt="Jane"
+        style="width: 100%"
+      />
+
+      <img
+        src="{% static 'images/hacking.jfif' %}"
+        alt="Jane"
+        style="width: 100%"
+      />
+
+      <img
+        src="{% static 'images/hacking.jfif' %}"
+        alt="Jane"
+        style="width: 100%"
+      />
+
+      <img
+        src="{% static 'images/hacking.jfif' %}"
+        alt="Jane"
+        style="width: 100%"
+      />
+    </div>
+  </dody>
+</html>

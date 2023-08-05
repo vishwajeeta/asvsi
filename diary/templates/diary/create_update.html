@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create_update</title>
+    <style>
+        input{
+            padding: 2px;
+            margin: 3px;
+            height: 15px;
+        }
+        #id_content{
+            width: 900px;
+            height: 500px;
+            font-size: 20px;
+        }
+        #submit{
+            color: aliceblue;
+            border: none;
+            background-color: orange;
+            height: 25px;
+            border-radius: 6px;
+            text-align: right;
+            cursor: pointer;
+        }
+        #submit:hover{
+            background-color: orangered;
+            color: white;
+        }
+        fieldset{
+            
+            height: 630px;
+            width: 1000px;
+            border-radius: 10px;
+            background-color: gray;
+            border: 1pt solid wheat;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        legend{
+            color: orangered;
+            background-color: aliceblue;
+            border-radius: 15px;
+            font-size: 20px;
+            text-align: right;
+        }
+        a{
+            text-decoration: none;
+            background-color: aliceblue;
+            border: solid gray;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 3px;
+        }
+        a:hover{
+            background-color:orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="{%url 'Note'%}"> ❮- BACK </a>
+    <fieldset><legend>create_update</legend>
+    <form action="" method="post">
+
+        {% csrf_token %}
+       Date: {{form.dates}} <br>
+       Context: <br>  {{form.content}} <br>
+        <input type="submit" id="submit">
+    </form>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete</title>
+    <style>
+        #container{
+            font-size: xx-large;
+            margin: 200px;
+            text-align: center;
+            padding: 50px;
+            border: solid blue;
+            
+        }
+        #submit{
+            cursor: pointer;
+            color: aliceblue;
+            background-color: orangered;
+            font-size: x-large;
+            border-radius: 5px;
+        }
+        #submit:hover{
+            background-color: red;
+        }
+        a{
+            text-decoration: none;
+            border: solid 1px black;
+            padding: 3px;
+            cursor: pointer;
+            
+            
+            font-size: x-large;
+            border-radius: 5px;
+        }
+        a:hover{
+            background-color: rgb(178, 177, 177);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <p>Are you soure you want to delete : <u> {{item.dates}} </u></p>
+    <form action="{% url 'delete_Note' item.id %}" method="post">
+        {% csrf_token %}
+        <a href="{% url 'Note' %}">Cancel</a>
+        <input type="submit" name="conform" id="submit" value="Delete">
+    </form>
+</div>
+</body>
+</html>

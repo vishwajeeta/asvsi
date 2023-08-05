@@ -1,0 +1,24 @@
+#appbar and body using flutter
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Vishwa());
+}
+
+class Vishwa extends StatelessWidget {
+  @override
+  build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar:AppBar(title:const Text("Welcome")),
+        body: Column(
+          children:const[
+           Text("hello sir"),
+           Text('how are you sir'),
+          
+        ])
+      ),
+    );
+  }
+}
+

@@ -1,0 +1,27 @@
+{% extends 'management/base.html' %}
+{% block title %}Sign up  {% endblock %}
+{% block content %}
+<div>
+    <style>
+      h5{
+        color: red;
+      }
+    </style>
+    {% for message in messages %}
+    <h5>{{message}}</h5>
+    {% endfor %}
+  </div>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <h1 align="center">Signup</h1>
+    
+        <input type="text" name="name" placeholder="User Name" required ><br>
+        <input type="email" placeholder="Email-Id" name="email" required><br>
+        <input type="password" name="password" placeholder="Password" required ><br>
+        <input type="password" name="password2" placeholder="Re-enter Password" required ><br>
+        <input type="submit" value="sign up" id="button">
+            <button type="reset"value="reset" id="button">reset the form</button>
+</form>
+<h3><a href="{% url 'signin' %}">Login</a></h3>
+{% endblock%}

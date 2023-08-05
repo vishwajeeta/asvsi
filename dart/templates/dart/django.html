@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ASVSI | {{data.App_Name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/flutter.css' %}">
+    <style>
+        pre {
+            font-size: large;
+            background-color: white;
+            color: black;
+            overflow: scroll;
+        }
+        ::-webkit-scrollbar {
+        height: 0px;
+      }
+    </style>
+    <div class="row">
+
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                  <a href="{{data.img.url}}">
+                    <img src="{{data.img.url}}" alt="Mountains" width="100%" height="600px" title="{{data.App_Name}} ">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <p style="color: blue; font-size:larger;">{{data.App_Name}}</p>
+                    
+                    {% if data.description == 'null' %}
+                    {% else %}
+                    <p style="color: orangered;">{{data.description}}</p>
+                    {% endif %}
+                    <pre>{{data.codes}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</head>
+
+</html>

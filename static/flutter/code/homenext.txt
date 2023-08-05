@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Vishwa());
+}
+
+void indra() {
+  runApp(Indrajith());
+}
+
+class Vishwa extends StatelessWidget {
+  @override
+  build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("home")),
+        body: Row(
+          children: [
+            RaisedButton(child: Text('next'), onPressed: indra),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Indrajith extends StatelessWidget {
+  @override
+  build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("next page")),
+        body: Row(
+          children: [
+            RaisedButton(child: Text('home'), onPressed: main),
+          ],
+        ),
+      ),
+    );
+  }
+}

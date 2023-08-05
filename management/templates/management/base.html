@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}{% endblock %}| Form</title>
+    <style>
+        input{
+            width: 300px;
+            height: 50px;
+            border-left:none ;
+            border-top: none;
+            border-right: none;
+            background-color: transparent;
+            color: green;
+            font-size: larger;
+            text-align: center;
+            
+            
+            
+        }
+        body{
+            text-align:center
+        }
+        #button{
+            width: 130px;
+            height: auto;
+            font-size: medium;
+            background-color:orange;
+            border-radius: 10px;
+            border-color: aliceblue;
+            color: aliceblue;
+        }
+        button:hover{
+            background-color: yellowgreen;
+        }
+        a{text-decoration: none;
+        color: #000;
+        }
+        a:hover{
+            color: rgb(54, 50, 50);
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% endblock %} 
+
+    </form>
+</body>
+</html>

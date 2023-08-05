@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>app page</title>
+<style>
+div.gallery {
+  margin: 3px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 150px;
+  border-radius: 10px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 2px;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: black;
+  }
+</style>
+</head>
+<body>
+    <a href="/"><h1>Home</h1></a>
+{% for data in data %}
+    
+<div class="gallery">
+  <a target="_blank" href="{{data.URL}}">
+    <img src="{{data.img.url}}" alt="Mountains" width="600" height="400" title="{{data.App_Name}}">
+  </a>
+  
+</div>
+{% endfor %}
+</body>
+</html>
+
+
+
+    
+    
+    

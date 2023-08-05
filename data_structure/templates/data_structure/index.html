@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>you tube</title>
+    <style>
+      .header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: aliceblue;
+      }
+      button{
+        display: none;
+      }
+      .header >form> input {
+        border: 1px solid gray;
+        border-radius: 100px;
+        width: 580px;
+        margin-left: 280px;
+        height: 35px;
+        font-size: large;
+        padding-left: 20px;
+      }
+      .header > .circle {
+        border: 1px solid;
+        border-radius: 50%;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 7px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        width: 16%;
+        background-color: aliceblue;
+        float: left;
+      }
+      hr {
+        padding: 0px;
+        width: 100%;
+      }
+      .os {
+        padding: 5px;
+        margin-right: 5px;
+        margin-left: 2px;
+        margin-top: 5px;
+      }
+      .os:hover {
+        background-color: gainsboro;
+        border-radius: 5px;
+      }
+      .recent {
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        margin-top: 7px;
+      }
+      .recent > p {
+        background-color: gainsboro;
+        margin: 11px;
+        padding: 7px;
+        border-radius: 8px;
+      }
+      .recent > p:hover {
+        color: white;
+        background-color: black;
+      }
+      ::-webkit-scrollbar {
+        height: 0px;
+      }
+      .om {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 2px;
+      }
+      .om:hover {
+        background-color: gainsboro;
+        border-radius: 5px;
+      }
+      .right {
+        margin-left: 150px;
+      }
+      img {
+        width: 25px;
+        border-radius: 50%;
+        padding-top: 3px;
+        padding-bottom: 5px;
+        margin-left: 10px;
+      }
+      .set {
+        float: right;
+        width: 81%;
+      }
+      .navigation{
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+      }
+      .navigation_item{
+        border: solid wheat;
+        background-color: greenyellow;
+        width: 100px;
+        padding: 7px;
+        border-radius: 10px;
+      }
+      .navigation_item:hover{
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="os">Data structure and algolithm</div>
+      <form action="{% url 'ds_search' %}" method="POST">
+        {% csrf_token %}
+      <input type="text" placeholder="Search" name="search" />
+      <button type="submit"></button>
+      </form>
+      <div class="circle os">V</div>
+
+      <div class="os right">Library</div>
+      <div class="os"><strong> Total= {{scroll.count}} </strong></div>
+
+      <img src="pp.jfif" alt="" srcset="" />
+    </div>
+    <div class="menu">
+      <br />
+      <div class="om">Home</div>
+      <div class="om">Shorts</div>
+      <div class="om">Subscriptions</div>
+      <hr />
+
+      <div class="om">Library</div>
+      <div class="om">History</div>
+      <div class="om">Your Videos</div>
+      <div class="om">Watch Later</div>
+      <div class="om">Your clips</div>
+      <div class="om">Show more</div>
+      <hr />
+      <div class="om">Subscriptions</div>
+    </div>
+
+    <div class="set">
+      
+    {% for data in data %}
+    <h1>{{data.name}}</h1>
+    {% if data.data %}
+    <div>{{data.data}}</div>
+    vishwa
+    {% endif %}
+    {% if data.img%}
+    <img src="{{data.img.url}}" alt="no image found">
+    {% endif%}
+    {% endfor %}
+    <br /><br />
+    <div class="navigation">
+    {% if data.has_previous %}
+    <a  href="?page={{ data.previous_page_number }}" class="navigation_item">❮ previous </a>
+    {% else %}
+    <a href="" style="display: content;"></a>
+    {% endif %}
+    {% if data.has_next %}
+    <a href="?page={{ data.next_page_number }}" style="text-align: right;" class="navigation_item">Next ❯</a>
+    {% endif %}
+    <br>
+  </div>
+    </div>
+  </body>
+</html>
